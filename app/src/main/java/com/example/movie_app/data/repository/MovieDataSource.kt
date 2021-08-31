@@ -41,6 +41,10 @@ class MovieDataSource (
     }
 
     override fun loadBefore(params: LoadParams<Int>, callback: LoadCallback<Int, Movie>) {
+        //recyclerview cuida da função dessa implementação eu acho
+    }
+
+    override fun loadAfter(params: LoadParams<Int>, callback: LoadCallback<Int, Movie>) {
         compositeDisposable.add(
             apiService.getPopularMovie(params.key)
                 .subscribeOn(Schedulers.io())
@@ -60,8 +64,5 @@ class MovieDataSource (
                     }
                 )
         )
-    }
-
-    override fun loadAfter(params: LoadParams<Int>, callback: LoadCallback<Int, Movie>) {
     }
 }
