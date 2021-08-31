@@ -13,6 +13,9 @@ const val BASE_URL = "https://api.themoviedb.org/3/"
 const val POSTER_BASE_URL = "http://image.tmdb.org/t/p/w342"
 //poster path viuva negra: /qAZ0pzat24kLdO3o8ejmbLxyOac.jpg
 
+const val FIRST_PAGE = 1
+const val POST_PER_PAGE = 20
+
 object TheMovieDBClient {
 
     fun getClient(): TheMovieDBInterface {
