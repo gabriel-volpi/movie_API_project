@@ -1,22 +1,19 @@
 package com.example.movie_app.data.repository
 
-enum class Status{
+enum class Status {
     RUNNING,
     SUCCESS,
     FAILED
+
 }
 
 class NetworkState(val status: Status, val msg: String) {
 
-    companion object{
-        lateinit var LOADED: NetworkState
-        lateinit var LOADING: NetworkState
-        lateinit var ERROR: NetworkState
-    }
+    companion object {
 
-    init {
-        LOADED = NetworkState(Status.SUCCESS, "Success")
-        LOADING = NetworkState(Status.RUNNING, "Running")
-        ERROR = NetworkState(Status.FAILED, "Something went wrong")
+        val LOADED: NetworkState = NetworkState(Status.SUCCESS, "Success")
+        val LOADING: NetworkState = NetworkState(Status.RUNNING, "Running")
+        val ERROR: NetworkState = NetworkState(Status.FAILED, "Something went wrong")
+
     }
 }

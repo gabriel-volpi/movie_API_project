@@ -1,4 +1,4 @@
-package com.example.movie_app.single_movie_details
+package com.example.movie_app.ui.single_movie_details
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -47,7 +47,7 @@ class SingleMovie : AppCompatActivity() {
 
     }
 
-    fun bindUI( it: MovieDetails){
+    private fun bindUI(it: MovieDetails){
         movie_title.text = it.title
         movie_tagline.text = it.tagline
         movie_release_date.text = it.releaseDate
@@ -57,7 +57,7 @@ class SingleMovie : AppCompatActivity() {
 
         val formatCurrency = NumberFormat.getCurrencyInstance(Locale.US)
         //não usei o budget na hora de fazer o parser do Json mas caso eu queira mudar, da pra continuar com isso aqui
-        movie_budget.text = 0.toString()
+        movie_budget.text = formatCurrency.format(it.budget)
         movie_revenue.text = formatCurrency.format(it.revenue)
 
         val moviePosterURL = POSTER_BASE_URL + it.posterPath
@@ -67,7 +67,7 @@ class SingleMovie : AppCompatActivity() {
 
 
     }
-    
+
     private fun getViewModel(movieId:Int): SingleMovieViewModel {
         return ViewModelProviders.of(this, object : ViewModelProvider.Factory {
             override fun <T : ViewModel?> create(modelClass: Class<T>): T {
