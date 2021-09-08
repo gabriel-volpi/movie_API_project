@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit
 const val API_KEY = "b303109644ebdc5bb5fe0be1efd1dd84"
 const val BASE_URL = "https://api.themoviedb.org/3/"
 
-const val POSTER_BASE_URL = "http://image.tmdb.org/t/p/w342"
+const val POSTER_BASE_URL = "https://image.tmdb.org/t/p/w342"
 //poster path viuva negra: /qAZ0pzat24kLdO3o8ejmbLxyOac.jpg
 
 const val FIRST_PAGE = 1
